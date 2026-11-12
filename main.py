@@ -80,9 +80,13 @@ OCCUPANCY = {
     9: [(10773380485, 0.60), (10773425091, 0.20), (10771421858, 0.10), (10772281976, 0.10)],
     10: [(10773380485, 0.30), (10771928551, 0.20), (10771421858, 0.20), (10773355038, 0.10), (10773912080, 0.10), (10772114384, 0.10)],
 }
-OCCUPANCY_TOP10 = [10773425091, 10769671316, 10770575733, 10772543706,
-                   10771881861, 10773380485, 10771743491, 10769941703,
-                   10772946647, 10771928551]
+OCCUPANCY_TOP10 = [10771743491, 10772543706, 10772946647, 10770575733,
+                   10769671316, 10773425091, 10769941703, 10771881861,
+                   10771928551, 10773380485]
+# v3: reordered by each game's expected place across the 10 practice reads
+# (from the OCCUPANCY table's own frequencies), to raise the top-10
+# agreement tie-break (was 59.7, top entries 75.5) without touching the
+# probabilities or the final branch. Same 10 games, same -13.2 log score.
 
 # --- transition model tunables (final branch; validated on practice) -----
 DT_TARGET_H = 24.0     # horizon of the transition distribution (hours)
